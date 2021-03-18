@@ -16,11 +16,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Logger.cpp \
+    controler.cpp \
+    flasherrunnable.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    worker.cpp
 
 HEADERS += \
-    mainwindow.h
+    Logger.h \
+    LoggerTemplate.h \
+    app_const_cfg.h \
+    controler.h \
+    flasherrunnable.h \
+    mainwindow.h \
+    worker.h
 
 FORMS += \
     mainwindow.ui
