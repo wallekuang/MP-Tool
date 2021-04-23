@@ -92,11 +92,11 @@ void MainWindow::uiInterface(void)
                              ui->comboBoxInterface4,
                             };
 
-    QList<QString>* list = mControler->get_interface();
+    QList<Adapter>* list = mControler->get_adapters();
 
     for(int i=0;i<4;i++){
         if(i<list->length()){
-            comboxs[i]->setItemText(0,list->value(i));
+            comboxs[i]->setItemText(0,list->value(i).mId);
             comboxs[i]->setCurrentIndex(0);
         }
         else{

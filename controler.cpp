@@ -9,7 +9,7 @@ Controler::Controler()
         mWorker[i] = new Worker(&mPool);
     }
 
-    mInterface.clear();
+    mAdapters.clear();
 
     mMacPosition = DEF_MAC_LOCATION;
 }
@@ -32,7 +32,7 @@ bool Controler::refresh_interface(void)
     if(!mWorker[SWD_RUNNER_ID]->is_busy()){
         //清除日志
         mRunnerLog[SWD_RUNNER_ID].clear();
-        mInterface.clear();
+        mAdapters.clear();
         FlasherRunnable* run = new FlasherRunnable(CMD_SWD, list, SWD_RUNNER_ID);
         connect(run,SIGNAL(report_flasher_state(int, QString, QStringList)), this, SLOT(process_worker_report(int, QString, QStringList)));
         mWorker[SWD_RUNNER_ID]->be_assigned_task(run);
@@ -62,7 +62,7 @@ bool Controler::check_download_condition(int which)
        ret &=  (mMac[which].toByteArray().length() == 12);
     }
 
-    ret &= (mInterface.length() > which);
+    ret &= (mAdapters.length() > which);
     return ret;
 }
 
@@ -77,7 +77,7 @@ bool Controler::start_manual_download(int which)
             QStringList list;
             list.append("-SWD");
             list.append("-d");
-            list.append(mInterface[which]);
+            list.append(mAdapters[which].mId);
             // 是否需要下载 mac 地址
             if(mMacAddrChecked && (i==0)){
                 list.append("-erase");
@@ -141,18 +141,40 @@ void Controler::parse_run_log(int worker_id, QString cmd, QString &log, bool &re
 {
     result = false;
     if(worker_id == SWD_RUNNER_ID){
-        // 用正则表达式提取当前正在使用的SW接口
-        QRegExp rx("[0-9a-z]{48}");
+        QString type;
+        QRegExp rx1("CONNECTED  BY ST-Link/V2");
+        QRegExp rx2("CONNECTED BY CMSIS-DAP");
+        QRegExp rx3("CONNECTED BY J-Link");
+        QRegExp rx_st_linkv2("(\\\\[0-9a-z]{3}){12}");
+        QRegExp rx_cmsis_dap("[0-9a-z]{48}");
         QStringList _textLineList = log.split("\n");
-        //
         for(QStringList::ConstIterator _iter = _textLineList.begin(); _iter != _textLineList.end(); ++_iter)
         {
-            if((rx.indexIn(*_iter) > -1)){
-                QString str = rx.cap(0);
-                mInterface.append(str);
-                result = true;
+            qDebug()<<*_iter;
+            // CONNECTED  BY ST-Link/V2
+            if((rx1.indexIn(*_iter) > -1)){
+                type = "ST-Link/V2";
+            }
+            else if((rx2.indexIn(*_iter) > -1)){
+                type = "CMSIS-DAP";
+            }
+            else if((rx3.indexIn(*_iter) > -1)){
+                type = "J-Link";
+            }
+            else if((rx_st_linkv2.indexIn(*_iter) > -1)){
+                Adapter adapter;
+                adapter.mType = type;
+                adapter.mId = rx_st_linkv2.cap(0);
+                mAdapters.append(adapter);
+            }
+            else if((rx_cmsis_dap.indexIn(*_iter) > -1)){
+                Adapter adapter;
+                adapter.mType = type;
+                adapter.mId = rx_cmsis_dap.cap(0);
+                mAdapters.append(adapter);
             }
         }
+
     }
 
     if(QString::compare(cmd, CMD_FLASH) == 0){
@@ -168,7 +190,6 @@ void Controler::parse_run_log(int worker_id, QString cmd, QString &log, bool &re
             }
         }
     }
-
 }
 
 // 设置参数更新
@@ -196,7 +217,7 @@ bool Controler::add_selected_file_path(int which, QString &path)
         mFilePosition.append(QString::number(0x10040000,16));
         ret = true;
     }
-    else if(which > 0){
+    else if(which >= 0){
         // 替换文件路径
         if(path.length() > 0){
             mFilePath[which] = path;
@@ -265,9 +286,9 @@ QList<QVariant>* Controler::get_file_paths_pos(void)
     return &mFilePosition;
 }
 
-QList<QString>* Controler::get_interface(void)
+QList<Adapter>* Controler::get_adapters(void)
 {
-    return &mInterface;
+    return &mAdapters;
 }
 
 

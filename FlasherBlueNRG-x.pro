@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Logger.cpp \
+    adapter.cpp \
     controler.cpp \
     flasherrunnable.cpp \
     main.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     Logger.h \
     LoggerTemplate.h \
+    adapter.h \
     app_const_cfg.h \
     controler.h \
     flasherrunnable.h \

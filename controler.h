@@ -9,6 +9,7 @@
 #include <QVariant>
 #include "flasherrunnable.h"
 #include "worker.h"
+#include "adapter.h"
 
 class Controler : public QThread
 {
@@ -34,6 +35,8 @@ public:
         DOWNLOAD_MANUAL,            //手工下载
         DOWNLOAD_AUTO,              //
     };
+
+
 
 public:
     Controler();
@@ -68,7 +71,7 @@ public:
     QString get_file_path(int which);
     QList<QString>* get_file_paths(void);
     QList<QVariant>* get_file_paths_pos(void);
-    QList<QString>* get_interface(void);
+    QList<Adapter>* get_adapters(void);
     QVariant get_file_position(int which);
     QVariant get_mac_position(void);
     bool is_mac_addr_checked(void);
@@ -101,7 +104,7 @@ private:
 
     // 临时配置
     QVariant mMac[MAX_DOWNLOAD_WORKER];
-    QList<QString> mInterface;
+    QList<Adapter> mAdapters;
 
 };
 

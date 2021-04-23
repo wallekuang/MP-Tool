@@ -33,10 +33,10 @@ bool Worker::be_assigned_task(FlasherRunnable *task)
         mMutex.lock();
         mToDoList.append(task);
         if(mToDoList.length() >= FULL_TASK_NUM){
-            mFull = false;
+            mFull = true;
          }
         else{
-            mFull = true;
+            mFull = false;
         }
         ret = true;
         mMutex.unlock();

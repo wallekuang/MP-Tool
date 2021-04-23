@@ -22,8 +22,8 @@ void FlasherRunnable::run()
 {
     QString log;
     mProcess = new QProcess();
-    //mProgram = "c:Users/Lucien/ST/BlueNRG-X Flasher Utility 4.1.0/Application/BlueNRG-X_Flasher_Launcher.exe";
-    //mProcess->setWorkingDirectory("c:Users/Lucien/ST/BlueNRG-X Flasher Utility 4.1.0/Application");
+//    mProgram = "c:Users/Lucien/ST/BlueNRG-X Flasher Utility 4.1.0/Application/BlueNRG-X_Flasher_Launcher.exe";
+//    mProcess->setWorkingDirectory("c:Users/Lucien/ST/BlueNRG-X Flasher Utility 4.1.0/Application");
 
     mProgram = "../BlueNRG-X_Flasher_Launcher.exe";
     mProcess->setWorkingDirectory("../");
