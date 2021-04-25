@@ -85,6 +85,7 @@ private slots:
 
     void on_lineEditMac4_editingFinished();
 
+
 private:
     Ui::MainWindow *ui;
 

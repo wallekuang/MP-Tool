@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     mControler->start();
 
     // limiting input
-    QRegExp regx("[A-Fa-f0-9]{8}");
+    QRegExp regx("[A-Fa-f0-9]{5}");
     QValidator *validator = new QRegExpValidator(regx, ui->lineEditMacPosition);
     ui->lineEditMacPosition->setValidator(validator);
     // 限制手工输入mac地址
@@ -92,12 +92,15 @@ void MainWindow::uiInterface(void)
                              ui->comboBoxInterface4,
                             };
 
+
+
     QList<Adapter>* list = mControler->get_adapters();
 
     for(int i=0;i<4;i++){
         if(i<list->length()){
             comboxs[i]->setItemText(0,list->value(i).mId);
             comboxs[i]->setCurrentIndex(0);
+
         }
         else{
             comboxs[i]->setItemText(0,"");
@@ -230,7 +233,7 @@ void MainWindow::initShow(void)
     ui->checkBoxMacAddr->setChecked(mControler->is_mac_addr_checked());
     ui->checkBoxScanMac->setChecked(mControler->is_scan_mac_checked());
     // 16进制显示
-    QString pos = QString::number(mControler->get_mac_position().toInt() , 16);
+    QString pos = QString::number(mControler->get_mac_position().toInt()-_MEMORY_FLASH_BEGIN_ , 16);
     ui->lineEditMacPosition->setText(pos);
 
     ui->comboBoxInterface1->setDisabled(true);
@@ -324,7 +327,7 @@ void MainWindow::on_lineEditMacPosition_editingFinished()
         mControler->SaveSettings();
     }
     else{
-        QString pos = QString::number(mControler->get_mac_position().toInt() , 16);
+        QString pos = QString::number(mControler->get_mac_position().toInt()-_MEMORY_FLASH_BEGIN_ , 16);
         ui->lineEditMacPosition->setText(pos);
     }
 }

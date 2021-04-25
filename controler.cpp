@@ -57,12 +57,18 @@ bool Controler::check_download_condition(int which)
 {
     bool ret = true;
     ret &= (which < MAX_DOWNLOAD_WORKER);
-    ret &= (mFilePath.length() != 0);
-    if(ret && mMacAddrChecked && mCheckBoxScanMac){
-       ret &=  (mMac[which].toByteArray().length() == 12);
+
+    if(ret)
+        ret &= (mFilePath.length() != 0);
+
+    if(ret)
+        if(ret && mMacAddrChecked && mCheckBoxScanMac){
+           ret &=  (mMac[which].toByteArray().length() == 12);
     }
 
-    ret &= (mAdapters.length() > which);
+    if(ret)
+        ret &= (mAdapters.length() > which);
+
     return ret;
 }
 
@@ -86,6 +92,7 @@ bool Controler::start_manual_download(int which)
                 QString pos = "0x" + QString::number(mMacPosition.toInt(),16);
                 list.append(pos);
                 list.append("-mac_start");
+                qDebug()<<mMac[i].toString();
                 list.append("0x" + mMac[i].toString());
             }
             list.append("-f");
@@ -106,6 +113,7 @@ bool Controler::start_manual_download(int which)
         }
     }
 
+    qDebug()<<ret;
     return ret;
 }
 
@@ -236,8 +244,8 @@ bool Controler::update_MAC_locate(QString at)
     bool ret = false;
     bool ok;
     int addr = at.toInt(&ok,16);
-    if(ok && (addr > _MEMORY_FLASH_BEGIN_) && (addr < _MEMORY_FLASH_END_) && ((addr %4)==0) ){
-        mMacPosition = at;
+    if(ok && (addr < _MEMORY_FLASH_MSIZE_) && ((addr %4)==0) ){
+        mMacPosition = addr + _MEMORY_FLASH_BEGIN_;
         ret = true;
     }
 
@@ -247,6 +255,7 @@ bool Controler::update_MAC_locate(QString at)
 bool Controler::update_started_mac(QString at)
 {
     bool ret = true;
+
     mMacPosition = at;
     return ret;
 }
@@ -254,12 +263,11 @@ bool Controler::update_started_mac(QString at)
 bool Controler::update_MAC(int which, QString mac)
 {
     bool ret = false;
-
     if( (mac.length() == 12) && (which < MAX_DOWNLOAD_WORKER) && (QString::compare(mMac[which].toString(), mac) != 0 ) ){
         ret = true;
         mMac[which] = mac;
         // 更新完后 启动一次下载
-        start_manual_download(which);
+        ret &= start_manual_download(which);
     }
     return ret;
 }

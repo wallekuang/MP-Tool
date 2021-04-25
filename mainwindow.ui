@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>740</width>
-    <height>644</height>
+    <width>758</width>
+    <height>657</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,45 +36,58 @@
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="6" column="2">
-       <widget class="QLabel" name="label_12">
-        <property name="text">
-         <string>下载到：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QLineEdit" name="lineEditDesAddr1">
-        <property name="text">
-         <string>10040000</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
-       <widget class="QLineEdit" name="lineEditDesAddr4"/>
-      </item>
-      <item row="3" column="2">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>下载到：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QPushButton" name="pushButtonSelect4">
-        <property name="text">
-         <string>选择文件4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
+      <item row="5" column="2">
        <widget class="QLabel" name="label_9">
         <property name="text">
          <string>下载到：</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="5">
+      <item row="7" column="2">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>下载到：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLabel" name="labelSelectPath5">
+        <property name="text">
+         <string>没有选中任何文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="labelSelectPath4">
+        <property name="text">
+         <string>没有选中任何文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QLineEdit" name="lineEditDesAddr2"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="labelSelectPath3">
+        <property name="text">
+         <string>没有选中任何文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>下载到：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="4">
+       <widget class="QLineEdit" name="lineEditDesAddr4"/>
+      </item>
+      <item row="5" column="4">
+       <widget class="QLineEdit" name="lineEditDesAddr3"/>
+      </item>
+      <item row="4" column="5">
        <spacer name="horizontalSpacer_4">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -87,41 +100,10 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButtonSelect3">
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButtonSelect4">
         <property name="text">
-         <string>选择文件3</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButtonSelect1">
-        <property name="text">
-         <string>选择文件1</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QLineEdit" name="lineEditDesAddr2"/>
-      </item>
-      <item row="4" column="1">
-       <widget class="QLabel" name="labelSelectPath3">
-        <property name="text">
-         <string>没有选中任何文件</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButtonSelect2">
-        <property name="text">
-         <string>选择文件2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QLabel" name="labelSelectPath4">
-        <property name="text">
-         <string>没有选中任何文件</string>
+         <string>选择文件4</string>
         </property>
        </widget>
       </item>
@@ -138,23 +120,6 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="3">
-       <widget class="QLineEdit" name="lineEditDesAddr3"/>
-      </item>
-      <item row="6" column="0">
-       <widget class="QPushButton" name="pushButtonSelect5">
-        <property name="text">
-         <string>选择文件5</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="labelSelectPath2">
-        <property name="text">
-         <string>没有选中任何文件</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="1">
        <widget class="QLabel" name="labelSelectPath1">
         <property name="sizePolicy">
@@ -168,33 +133,105 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="3">
+      <item row="2" column="4">
+       <widget class="QLineEdit" name="lineEditDesAddr1">
+        <property name="text">
+         <string>00000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="pushButtonSelect5">
+        <property name="text">
+         <string>选择文件5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButtonSelect2">
+        <property name="text">
+         <string>选择文件2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="4">
        <widget class="QLineEdit" name="lineEditDesAddr5"/>
       </item>
-      <item row="5" column="2">
-       <widget class="QLabel" name="label_10">
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButtonSelect1">
+        <property name="text">
+         <string>选择文件1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="labelSelectPath2">
+        <property name="text">
+         <string>没有选中任何文件</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButtonSelect3">
+        <property name="text">
+         <string>选择文件3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="label_6">
         <property name="text">
          <string>下载到：</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="6">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="6" column="1">
-       <widget class="QLabel" name="labelSelectPath5">
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>没有选中任何文件</string>
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QLabel" name="label_19">
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="3">
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -226,6 +263,33 @@
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="5" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>起始MAC地址</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>(这里采用相对地址，即填Flash起始地址的偏移量即可)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_14">
         <property name="sizePolicy">
@@ -245,15 +309,21 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="3" column="2">
        <widget class="QLineEdit" name="lineEditMacPosition">
         <property name="text">
          <string>1007E000</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <spacer name="horizontalSpacer_2">
+      <item row="3" column="5">
+       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLineEdit" name="lineEditMacStartAddr"/>
+      </item>
+      <item row="3" column="3">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -265,13 +335,23 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEditMacStartAddr"/>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label">
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>起始MAC地址</string>
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -312,16 +392,8 @@
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="0">
-       <widget class="QComboBox" name="comboBoxInterface1">
-        <property name="editable">
-         <bool>false</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>07200001066fff3231384e5043173723a5a5a5a597969908</string>
-         </property>
-        </item>
+      <item row="6" column="0">
+       <widget class="QComboBox" name="comboBoxInterface3">
         <item>
          <property name="text">
           <string>空（None）</string>
@@ -329,65 +401,10 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>MAC地址或者特定数据输入（可用扫描枪输入）</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="5">
-       <widget class="QPushButton" name="start3Button">
-        <property name="text">
-         <string>开始</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="5">
-       <widget class="QPushButton" name="start4Button">
-        <property name="text">
-         <string>开始</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QLabel" name="label_16">
-        <property name="text">
-         <string>进度</string>
-        </property>
-       </widget>
+      <item row="6" column="2">
+       <widget class="QLineEdit" name="lineEditMac3"/>
       </item>
       <item row="4" column="4">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="4" column="5">
-       <widget class="QPushButton" name="start1Button">
-        <property name="text">
-         <string>开始</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="QLineEdit" name="lineEditMac4"/>
-      </item>
-      <item row="5" column="5">
-       <widget class="QPushButton" name="start2Button">
-        <property name="text">
-         <string>开始</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="3">
        <widget class="QProgressBar" name="progressBar_1">
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
@@ -409,29 +426,47 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="5" column="2">
        <widget class="QLineEdit" name="lineEditMac2"/>
       </item>
-      <item row="5" column="3">
-       <widget class="QProgressBar" name="progressBar_2">
-        <property name="value">
-         <number>24</number>
-        </property>
-        <property name="textVisible">
-         <bool>false</bool>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>MAC地址或者特定数据输入（可用扫描枪输入）</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
-       <widget class="QLineEdit" name="lineEditMac3"/>
+      <item row="5" column="6">
+       <widget class="QPushButton" name="start2Button">
+        <property name="text">
+         <string>开始</string>
+        </property>
+       </widget>
       </item>
-      <item row="6" column="0">
-       <widget class="QComboBox" name="comboBoxInterface3">
+      <item row="6" column="6">
+       <widget class="QPushButton" name="start3Button">
+        <property name="text">
+         <string>开始</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QLineEdit" name="lineEditMac4"/>
+      </item>
+      <item row="7" column="0">
+       <widget class="QComboBox" name="comboBoxInterface4">
         <item>
          <property name="text">
           <string>空（None）</string>
          </property>
         </item>
+       </widget>
+      </item>
+      <item row="7" column="6">
+       <widget class="QPushButton" name="start4Button">
+        <property name="text">
+         <string>开始</string>
+        </property>
        </widget>
       </item>
       <item row="3" column="0">
@@ -443,12 +478,12 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>接口选择: stlink/cmsis-dap/jlink</string>
+         <string>接口选择: st-link-v2/cmsis-dap/jlink</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="3">
-       <widget class="QProgressBar" name="progressBar_3">
+      <item row="5" column="4">
+       <widget class="QProgressBar" name="progressBar_2">
         <property name="value">
          <number>24</number>
         </property>
@@ -466,7 +501,64 @@
         </item>
        </widget>
       </item>
-      <item row="7" column="3">
+      <item row="4" column="0">
+       <widget class="QComboBox" name="comboBoxInterface1">
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>07200001066fff3231384e5043173723a5a5a5a597969908</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>空（None）</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="6" column="4">
+       <widget class="QProgressBar" name="progressBar_3">
+        <property name="value">
+         <number>24</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>进度</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QPushButton" name="start1Button">
+        <property name="text">
+         <string>开始</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLineEdit" name="lineEditMac1"/>
+      </item>
+      <item row="7" column="4">
        <widget class="QProgressBar" name="progressBar_4">
         <property name="value">
          <number>24</number>
@@ -477,15 +569,52 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEditMac1"/>
+       <widget class="QLabel" name="label_22">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
       </item>
-      <item row="7" column="0">
-       <widget class="QComboBox" name="comboBoxInterface4">
-        <item>
-         <property name="text">
-          <string>空（None）</string>
-         </property>
-        </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_23">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>0x</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="label_24">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLabel" name="label_25">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string>0x</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
      </layout>
@@ -514,7 +643,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>740</width>
+     <width>758</width>
      <height>21</height>
     </rect>
    </property>
